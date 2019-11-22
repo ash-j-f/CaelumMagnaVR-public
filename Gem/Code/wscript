@@ -1,0 +1,40 @@
+
+def build(bld):
+    bld.DefineGem(
+        # General
+        includes                = ['.', bld.Path('Code/CryEngine/CryCommon'), bld.Path('Code/CryEngine/CryAction')],
+        use                     = ['AzGameFramework', 'AzToolsFramework', 'InputManagementFramework', 'LmbrCentral'],
+		uselib = ['LIBPQ','LIBPQXX'],
+        disable_pch             = True,
+		#pch             = 'StdAfx.cpp',
+
+        # Platform Specific
+
+        # ==============================
+        # iOS
+        # 'ios_output_file_name' must match both
+        # 'executable_name' in 'project.json' and
+        # 'Executable file' in '../Resources/IOSLauncher/Info.plist'
+        # ==============================
+        ios_output_file_name    = 'CaelumMagnaVRLauncher',
+        ios_file_list           = ['caelummagnavr_ios.waf_files'],
+
+        # ==============================
+        # AppleTV
+        # 'appletv_output_file_name' must match both
+        # 'executable_name' in 'project.json' and
+        # 'Executable file' in '../Resources/AppleTVLauncher/Info.plist'
+        # ==============================
+        appletv_output_file_name = 'CaelumMagnaVRLauncher',
+        appletv_file_list       = ['caelummagnavr_appletv.waf_files'],
+
+        darwin_file_list        = ['caelummagnavr_mac.waf_files'],
+
+        restricted_script       = 'update_restricted_parameters',
+
+        # Testing
+        test_all_file_list      = ['caelummagnavr_tests.waf_files'],
+
+        # Add additional custom build options here
+
+    )

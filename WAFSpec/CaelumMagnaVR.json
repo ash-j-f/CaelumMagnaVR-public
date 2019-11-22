@@ -1,0 +1,9 @@
+{
+    "description": "Configuration for CaelumMagnaVR",
+    "visual_studio_name": "CaelumMagnaVR",
+    "comment" : "",
+    "game_projects" : "CaelumMagnaVR",
+
+    "modules" : [
+    ]
+}

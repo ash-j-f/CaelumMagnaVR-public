@@ -1,0 +1,1 @@
+COPY gaia_main TO PROGRAM 'C:\cygwin64\bin\gzip > V:\gaia_main.csv.gz' WITH (FORMAT CSV, DELIMITER ',', HEADER);

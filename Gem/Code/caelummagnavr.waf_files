@@ -1,0 +1,34 @@
+{
+	"none": {
+        "Root": [
+            "StdAfx.cpp",
+            "StdAfx.h"
+        ]
+    },
+    "auto": {
+        "Include": [
+            "Include/CaelumMagnaVR/CaelumMagnaVRBus.h",
+			"Include/CaelumMagnaVR/StarMapComponentBus.h",
+			"Include/CaelumMagnaVR/SyncDemoComponentBus.h"
+        ],
+        "Source": [
+            "Source/CaelumMagnaVRModule.cpp",
+            "Source/CaelumMagnaVRSystemComponent.cpp",
+            "Source/CaelumMagnaVRSystemComponent.h",
+            "Source/Components/StarMapComponent.h",
+            "Source/Components/StarMapComponent.cpp",
+			"Source/Components/StarMapBoundaryScalerComponent.h",
+            "Source/Components/StarMapBoundaryScalerComponent.cpp",
+			"Source/Components/CMObjectSyncComponent.h",
+            "Source/Components/CMObjectSyncComponent.cpp",
+			"Source/Components/SyncDemoComponent.h",
+			"Source/Components/SyncDemoComponent.cpp",
+            "Source/Console.h",
+            "Source/Console.cpp",
+			"Source/CMLog.h",
+			"Source/CMLog.cpp",
+			"Source/ConfigFileHandler.h",
+			"Source/ConfigFileHandler.cpp"
+        ]
+    }
+}

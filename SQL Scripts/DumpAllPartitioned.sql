@@ -1,0 +1,1 @@
+COPY (select * from gaia_main) TO PROGRAM 'C:\cygwin64\bin\gzip > G:\gaia_main_randindex_geom_only_clustered_on_random_index.csv.gz' WITH (FORMAT CSV, DELIMITER ',', HEADER);

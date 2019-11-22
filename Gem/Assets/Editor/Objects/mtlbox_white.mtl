@@ -1,0 +1,6 @@
+<Material MtlFlags="524324" DccMaterialHash="0" Shader="Particleimposter" GenMask="0" StringGenMask="" SurfaceType="mat_default" Diffuse="1,1,1,1" Specular="1,1,1,1" Opacity="1" Shininess="2.0078754" AlphaTest="0.5" VoxelCoverage="0" vertModifType="0" LayerAct="1">
+ <Textures>
+  <Texture Map="Diffuse" File="gem/assets/engine/engineassets/textures/defaults/spot_crappy_white.dds"/>
+ </Textures>
+ <PublicParams SoftIntersectionFactor="0" AnimSpeed="0" BumpTilling="0" DiffuseRange="1" BumpAnimSpeed="0" AnimAmplitude="0" AnimOffset="0" BumpScale="0"/>
+</Material>

@@ -1,0 +1,25 @@
+{
+    "GemFormatVersion": 4,
+    "Uuid": "04780ec16d434ce3b12ba58e2307d2e8",
+    "Name": "CaelumMagnaVR",
+    "DisplayName": "CaelumMagnaVR",
+    "Version": "0.1.0",
+    "Summary": "A short description of my Gem.",
+    "Tags": ["Game"],
+    "IconPath": "preview.png",
+    "IsGameGem": true,
+    "Modules": [
+        {
+            "Type": "GameModule"
+        }
+    ],
+	"Dependencies": [
+        {
+            "Uuid": "8e5b5e01df344dc78dd024db9793b58b",
+            "VersionConstraints": [
+                "~>0.1"
+            ],
+            "_comment": "PLY"
+        }
+    ]
+}

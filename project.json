@@ -1,0 +1,21 @@
+{
+    "project_name": "CaelumMagnaVR",
+    "product_name": "CaelumMagnaVR",
+    "executable_name": "CaelumMagnaVRLauncher",
+    "modules" : [],
+    "project_id": "{ED7C12D1-4EEC-46F6-9246-4B94E47AAF35}",
+
+    "android_settings" : {
+        "package_name" : "com.lumberyard.yourgame",
+        "version_number" : 1,
+        "version_name" : "1.0.0.0",
+        "orientation" : "landscape"
+    },
+
+    "durango_settings" : {
+    },
+
+    "orbis_settings": {
+    }
+
+}

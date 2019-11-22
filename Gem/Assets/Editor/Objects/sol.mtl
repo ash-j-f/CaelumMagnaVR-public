@@ -1,0 +1,5 @@
+<Material MtlFlags="524320" DccMaterialHash="0" Shader="Referenceimage" GenMask="0" StringGenMask="" SurfaceType="mat_default" Diffuse="1,1,1,1" Specular="1,1,1,1" Opacity="1" Shininess="2.450001" VoxelCoverage="0" vertModifType="0" LayerAct="1">
+ <Textures>
+  <Texture Map="Diffuse" File="gem/assets/engine/engineassets/textures/defaults/solid_yellow.dds"/>
+ </Textures>
+</Material>
