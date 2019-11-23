@@ -96,7 +96,7 @@ The Object and Database Synchronisation demo is intended to be viewed in the Lum
 1. Install PostgreSQL on Windows using EnterpriseDB installer: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
     * Note: You may need to run the installer using option "--install_runtimes 0" if encountering a C++ runtime install error. See https://stackoverflow.com/questions/4288303/cant-install-postgresql-an-error-occurred-executing-the-microsoft-vc-runtime
 
-1. Launch Stackbuilder when asked at the end of the PostgreSQL install. Find and install the PostGIS packacge listed under "Spatial Extensuions" in Stackbuilder.
+1. Launch Stackbuilder when asked at the end of the PostgreSQL install. Find and install the PostGIS package listed under "Spatial Extensuions" in Stackbuilder.
 
 1. Access the PostgreSQL server via pgAdmin (go to Windows > Run > and type "pgadmin" to find the app).
     This will open the pgAdmin tool at a localhost address in your browser.
