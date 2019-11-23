@@ -7,13 +7,19 @@ This repository serves as a reference project for using the PLY PostgreSQL Datab
 
 For now, the intersting bit is the source code found in https://github.com/ash-j-f/CaelumMagnaVR-public/tree/master/Gem/Code which shows how to use various aspects of the PLY Gem.
 
-**Until the star database creation and import process is documented, this project is not currently in a publicly usable state, but this will be completed in the near future.**
+**Until the star database creation and import process is documented, and the customised star data (over 80GB of data) is uploaded to a public location, the compiled project is not currently in a publicly usable state. This will be completed in the near future.**
 
 The project will build and run, but without a star database to connect to, it will not display any stars.
 
 For a preview of the star map software running using my locally hosted star database, check out a video of the prototype at https://youtu.be/VHa8dVGE2vs
 
 Check out my portfolio at https://ajflynn.io/
+
+## Supported Hardware
+
+The Star Map runs on 64-bit Windows platforms (Windows 7 or above), and is compatible with Oculus VR headsets and controllers. Experimental support is also provided for OpenVR compatible headsets such as the HTC Vive family of VR headsets.
+
+Minimum system specification (or equivalent): Intel i7 processor with at least 4 cores, 4GB RAM, Nvidia GTX1060 GPU.
 
 ## Running the Executable
 
@@ -37,7 +43,105 @@ TBC
 
 TBC
 
-## Installation
+## Installation (Star Map PostgreSQL Database)
+
+### A Note on Security
+
+**This Star Map database is intended to be accessible only at the address "localhost", on the same PC that the Star Map applictaion is running.** As such, the database, table and user setup instructions that follow use "easy" but low-security methods. You should ensure that your Windows firewall and other firewall devices prevent anyone uninvited from accessing the database server on your PC. Alternatively, you can configure the database with stronger security options (beyond the scope of this document), and choose your own CaelumMagnaVR database user password (rather than using the default). You will need to alter the username entry on the PLY Configuration Component in each of the project levels via the Lumberyard Editor. You will then need to re-compile the application.
+
+### Database Installation Process
+
+1. Install PostgreSQL on Windows using EnterpriseDB installer: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+    * Note: You may need to run the installer using option "--install_runtimes 0" if encountering a C++ runtime install error. See https://stackoverflow.com/questions/4288303/cant-install-postgresql-an-error-occurred-executing-the-microsoft-vc-runtime
+
+1. Launch Stackbuilder when asked at the end of the PostgreSQL install. Find and install the PostGIS packacge listed under "Spatial Extensuions" in Stackbuilder.
+
+1. Access the PostgreSQL server via pgAdmin (go to Windows > Run > and type "pgadmin" to find the app).
+    This will open the pgAdmin tool at a localhost address in your browser.
+    The server should be visible in the list on the left, and will require the password and username you chose in the PostgreSQL setup phase to access it.
+    
+1. Use pgadmin to create a new user in the database called "CaelumMagnaUser" with the password "CaelumMagnaUser".
+    
+1. Use pgadmin to create a new database on the PostgreSQL server and name it "CaelumMagnaVR". Set "CaelumMagnaUser" as the database owner.
+
+1. Right click the "Extensions" subtree item undet the CaelumMagnaVR database name and choose "Create > Extension".
+
+1. Repeat the above step to install each of the following PostGIS extensions:
+    * plpgsql (may already be installed by default)
+    * dblink
+    * tsm_system_rows
+    * postgis
+    
+1. Install Cygwin, which provides Linux-like commands on the command line for Windows such as Gzip https://www.cygwin.com/
+    
+1. Click the windows Start button and type "psql". Run the psql shell.
+
+1. When prompted, enter "localhost" for the server name, "CaelumMagnaVR" for the database name, "5432" for the port, "CaelumMagnaVRUser" for the username, and "CaelumMagnaVRUser" as the password (if asked).
+
+1. When logged into the psql shell, create the star map database table with the following SQL commands:
+    ```
+    CREATE TABLE public.gaia_main
+    (
+        source_id bigint NOT NULL,
+        geom geometry,
+        random_index integer,
+        CONSTRAINT gaia_main_pkey PRIMARY KEY (source_id)
+    ) PARTITION BY HASH (source_id) 
+    WITH (
+        OIDS = FALSE
+    )
+    TABLESPACE pg_default;
+    
+    CREATE INDEX gaia_main_geom_idx
+        ON public.gaia_main USING gist
+        (geom gist_geometry_ops_nd)
+        TABLESPACE pg_default;
+
+    CREATE TABLE public.gaia_main_0 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 0);
+
+    CREATE TABLE public.gaia_main_1 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 1);
+
+    CREATE TABLE public.gaia_main_10 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 10);
+
+    CREATE TABLE public.gaia_main_11 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 11);
+
+    CREATE TABLE public.gaia_main_2 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 2);
+
+    CREATE TABLE public.gaia_main_3 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 3);
+
+    CREATE TABLE public.gaia_main_4 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 4);
+
+    CREATE TABLE public.gaia_main_5 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 5);
+
+    CREATE TABLE public.gaia_main_6 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 6);
+
+    CREATE TABLE public.gaia_main_7 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 7);
+
+    CREATE TABLE public.gaia_main_8 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 8);
+
+    CREATE TABLE public.gaia_main_9 PARTITION OF public.gaia_main
+        FOR VALUES WITH (modulus 12, remainder 9);
+    ```
+
+1. **TBC** Download the Caelum Magna Gaia Star Database file from XXXXXXXX. Note that this file is very large, at over 80GB.
+
+1. Run the following command to import the star data (change the file paths to match the location of the Cygwin gzip command and the Caelum Magna Gaia star database file on your system). This process will take a long time.
+    ```
+    copy gaia_main (source_id, geom, random_index) from program 'C:\cygwin64\bin\gzip -dcq V:\gaia\caelum_magna_gaia_main.csv.gz' WITH (FORMAT CSV, DELIMITER ',', HEADER);
+    ````
+
+## Installation (Lumberyard and Star Map Project Files)
 
 1. Download and install the latest version of the Amazon Lumberyard game engine https://aws.amazon.com/lumberyard/
 
