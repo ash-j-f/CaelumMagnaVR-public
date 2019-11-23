@@ -1,7 +1,12 @@
 # Caelum Magna VR
-Caelum Magna VR Star Map made with Amazon Lumberyard and the PLY PostgreSQL Connector Gem
 
-## Introduction
+Caelum Magna is an interactive 3D Star Map, that supports VR devices, made with [Amazon Lumberyard](https://aws.amazon.com/lumberyard/) and the [PLY PostgreSQL Connector Gem](https://github.com/ash-j-f/PLY-public).
+
+Caelum Magna visualises star survey data from the ESA GAIA satellite project https://sci.esa.int/web/gaia
+
+This project is written in C++ using the Amazon Lumberyard game engine, and streams data in real-time from positional data of 1.3 billion stars stored in a locally hosted PostgreSQL database.
+
+## Important Note
 
 This repository serves as a reference project for using the PLY PostgreSQL Database connector Gem https://github.com/ash-j-f/PLY-public
 
