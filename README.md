@@ -28,12 +28,12 @@ Minimum system specification (or equivalent): Intel i7 processor with at least 4
 
 ## Running the Executable
 
-To load the Star Map Demo, open a windows command line console, change directory to the binary builds directory, and run the following command:
+To load the **Star Map Demo**, open a windows command line console, change directory to the binary builds directory, and run the following command:
 ```
 CaelumMagnaVR.exe +map StarMapDemo
 ```
 
-To load the Object and Database synchronisation demo (which demonstrates a feature of the PLY Gem), open a windows command line console, change directory to the binary builds directory, and run the following command:
+To load the **Object and Database Synchronisation Demo** (which demonstrates the automatic object and database sync feature of the PLY Gem), view and play the SaveStateDemo through the Lumberyard Editor. The save state demo can also be run as part of the standalone executable; open a windows command line console, change directory to the binary builds directory, and run the following command:
 ```
 CaelumMagnaVR.exe +map SaveStateDemo
 ```
@@ -42,17 +42,50 @@ CaelumMagnaVR.exe +map SaveStateDemo
 
 ### Star Map
 
-TBC
+#### Virtual Reality (Oculus Touch)
+```
+Move Star Field - Left trigger and move left hand controller, 
+    or Right trigger and move right hand controller.
+Move Star Field - Thumbstick on right hand controller. Depress thumb 
+    stick to change panning from vertical to horizontal mode.
+Zoom Star Field - Buttons A and B on the right hand controller.
+Increase Star Size - Right grip button.
+Decrease Star Size - Left grip button.
+Rotate Viewer Cube - Left thumb stick left/right.
+Change Distance to Viewer Cube - Left thumb stick up/down.
+Change Viewer Cube Size - Buttons X and Y on the left hand controller.
+Increase/Decrease Max Displayed Stars - ; and '
+Quit - Alt+F4
+```
+
+#### Virtual Reality (OpenVR - HTC Vive, etc)
+```
+[TBC]
+```
+
+#### Keyboard
+```
+Move Star Field - Arrow keys (vertical movement), 
+    Right-shift and right-control (forward and back).
+Zoom Star Field - = and -
+Increase Star Size - ]
+Decrease Star Size - [
+Rotate Viewer Cube - A and D.
+Change Distance to Viewer Cube - W and S.
+Change Viewer Cube Size - Page Up and Page Down.
+Increase/Decrease Max Displayed Stars - ; and '
+Quit - Alt+F4
+```
 
 ### Object and Database Synchronisation
 
-TBC
+The Object and Database Synchronisation demo is intended to be viewed in the Lumberyard Editor. To reset the scene, press Play to execute the demo, open Lumberyard console (by pressing the \` backtick key), and type `cm reset`, then press enter.
 
 ## Installation (Star Map PostgreSQL Database)
 
 ### A Note on Security
 
-**This Star Map database is intended to be accessible only at the address "localhost", on the same PC that the Star Map applictaion is running.** As such, the database, table and user setup instructions that follow use "easy" but low-security methods. You should ensure that your Windows firewall and other firewall devices prevent anyone uninvited from accessing the database server on your PC. Alternatively, you can configure the database with stronger security options (beyond the scope of this document), and choose your own CaelumMagnaVR database user password (rather than using the default). You will need to alter the username entry on the PLY Configuration Component in each of the project levels via the Lumberyard Editor. You will then need to re-compile the application.
+**This Star Map database is intended to be accessible only at the address "localhost", on the same PC that the Star Map applictaion is running.** As such, the database, table and user setup instructions that follow use "easy" but low-security methods. You should ensure that your Windows firewall and other firewall devices prevent anyone uninvited from accessing the database server on your PC. Alternatively, you can configure the database with stronger security options (beyond the scope of this document), and choose your own CaelumMagnaVR database user password (rather than using the default). You will need to alter the username entry on the PLY Configuration Component in each of the project levels via the Lumberyard Editor. You will then need to re-compile the application. Database settings for the compiled application will be moved to an external configuration file at a future date.
 
 ### Database Installation Process
 
