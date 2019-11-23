@@ -125,9 +125,9 @@ To compile the project into a release build, follow the release build instructio
 1. Copy the directory `(Lumberyard)\dev\Bin64vc141.Release` to `(Lumberyard)\dev\CaelumMagnaVR_pc_paks\Bin64vc141.Release` (you can also use the Bin64vc141.Profile build here instead, if you need to do debugging on the standalone EXE).
 
 1. The standalone executable can now be run from `(Lumberyard)\dev\CaelumMagnaVR_pc_paks\Bin64vc141.Release\CaelumMagnaVR.exe`
-    Note: To load a specific level file you need to use the `+map` option on the command line after the exe name, eg:
+    * Note: To load a specific level file you need to use the `+map` option on the command line after the exe name, eg:
         * `CaelumMagnaVR.exe +map StarMapDemo`
-	* `CaelumMagnaVR.exe +map SaveStateDemo`
+        * `CaelumMagnaVR.exe +map SaveStateDemo`
 	
 ## Credits
 
