@@ -1,6 +1,6 @@
 # Caelum Magna VR
 
-Caelum Magna is an interactive 3D Star Map, that supports VR devices, made with [Amazon Lumberyard](https://aws.amazon.com/lumberyard/) and the [PLY PostgreSQL Connector Gem](https://github.com/ash-j-f/PLY-public).
+Caelum Magna is an interactive 3D Star Map, that supports VR devices (and may also be viewed in 2D on a regular monitor), made with [Amazon Lumberyard](https://aws.amazon.com/lumberyard/) and the [PLY PostgreSQL Connector Gem](https://github.com/ash-j-f/PLY-public).
 
 Caelum Magna visualises star survey data from the ESA GAIA satellite project https://sci.esa.int/web/gaia
 
@@ -23,6 +23,8 @@ Check out my portfolio at https://ajflynn.io/
 ## Supported Hardware
 
 The Star Map runs on 64-bit Windows platforms (Windows 7 or above), and is compatible with Oculus VR headsets and controllers. Experimental support is also provided for OpenVR compatible headsets such as the HTC Vive family of VR headsets.
+
+**A VR headset is NOT required to view the Star Map. It has a 2D screen mode too.**
 
 Minimum system specification (or equivalent): Intel i7 processor with at least 4 cores, 4GB RAM, Nvidia GTX1060 GPU.
 
@@ -55,6 +57,7 @@ Rotate Viewer Cube - Left thumb stick left/right.
 Change Distance to Viewer Cube - Left thumb stick up/down.
 Change Viewer Cube Size - Buttons X and Y on the left hand controller.
 Increase/Decrease Max Displayed Stars - ; and '
+Fullscreen - Alt+Enter
 Quit - Alt+F4
 ```
 
@@ -74,6 +77,7 @@ Rotate Viewer Cube - A and D.
 Change Distance to Viewer Cube - W and S.
 Change Viewer Cube Size - Page Up and Page Down.
 Increase/Decrease Max Displayed Stars - ; and '
+Fullscreen - Alt+Enter
 Quit - Alt+F4
 ```
 
