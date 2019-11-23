@@ -1,6 +1,6 @@
 <download name="StarMapDemo" type="Map">
  <index src="filelist.xml" dest="filelist.xml"/>
  <files>
-  <file src="level.pak" dest="level.pak" size="42463" md5="74f4069babacb15b16145d572dde72a8"/>
+  <file src="level.pak" dest="level.pak" size="42442" md5="d8b67ba18521b44fd1677b15354fb7e3"/>
  </files>
 </download>
